@@ -1,0 +1,83 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% block content %}
+
+
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 col-md-12 col-xl-12 col-lg-12">
+            <table class="table table-bordered table-responsive table-hover mt-2 ">
+                <thead class="bg-dark text-white">
+                    <tr>
+                        <th>AssignID</th>
+                        <th>Name&nbsp;title&nbsp;of&nbsp;the&nbsp;Assignment</th>
+                      
+                        <th>Skills&nbsp;Required</th>
+                        <th>Call&nbsp;to&nbsp;Emps&nbsp;(Name)</th>
+                        
+                      
+                        <th>Date&nbsp;of&nbsp;Call&nbsp;made</th>
+                        <th>Assignedto</th>
+                        <th>Date&nbsp;of&nbsp;Assigning&nbsp;Task</th>
+                        <th>Date&nbsp;of&nbsp;Submistion</th>
+                        <th>Downlode&nbsp;attachement</th>
+                        <th>Status</th>
+                        <th>Deatail</th>
+
+                       
+
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in assignment_all  %}
+                    <tr>
+                        <td>{{i.assign_id}}</td>
+                        <td>{{i.name_of_title|capfirst}}</td>
+                        
+                        {% for user in i.call_to_people.all %}
+                        
+                        <td>{{ user.empskills|safe}}</td>
+                        <td>{{user}}</td>
+                            
+                     
+
+                        <td>{{i.date_of_call_to_people}}</td>
+                    
+                        <td>{{i.assigned_to}}</td>
+
+                        <td>{{i.date_of_assigning_task}}</td>
+
+                        <td>{{i.date_of_submistion}}</td>
+
+                        <td>Attachment: <a href="{{ i.downlode_attachement.url }}" target="_blank"><i
+                                    class="fas fa-download"></i></a></td>
+                        <td>{{i.status}}</td>
+                        <td>{{i.detail}}</td>
+
+
+                      
+                    </tr>
+                    {% endfor %}
+
+                    {% endfor %}
+
+
+                </tbody>
+            </table>
+
+
+
+        </div>
+
+
+    </div>
+
+
+
+</div>
+
+
+{% endblock content %}

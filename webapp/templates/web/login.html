@@ -1,0 +1,30 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% block content %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-5 mx-auto mt-2">
+
+            
+            <form action="{% url 'home' %}" method="POST">
+                <h3 class="alert alert-primary text-justify">Login Form</h3>
+                {% csrf_token %}
+                <label for="">User Id:</label>
+                <input type="text" name="username" placeholder="User name" class="form-control">
+                <label for="">User Password</label>
+                <input type="password" name="password" placeholder="User password" class="form-control">
+
+
+            <center>
+                <input type="submit" value="Submit" class="btn btn-danger">
+                <input type="reset" value="Cancel" class="btn btn-warning">
+            </center>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,19 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% block content %}
+
+     <!-- home page Display Matter Of content -->
+
+     <div class="jumbotron jumbotron-fluid">
+        <div class="container border-4">
+            <h1 class="text-center text-secoundary fa-x1">Welcome To Job Portal Assigning............</h1>
+            <p class="display-6 text-info shadow-lg text-center">All Files Uplode We Can Get It</p>
+            <hr class="my-2">
+            <p>More info</p>
+            <p class="lead">
+                <a class="btn btn-primary btn-lg" href="{% url 'create-data'  %}" role="button">Click Here..</a>
+            </p>
+        </div>
+    </div>
+  
+{% endblock content %}

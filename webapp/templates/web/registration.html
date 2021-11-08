@@ -1,0 +1,27 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% block content %}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-5">
+            
+<h3 class="alert alert-primary text-justify">Regisration Form</h3>
+            <form action="" method="POST" >
+                {% csrf_token %}
+                {% for fm in form  %}
+                {{fm.label_tag}} {{fm}} {{fm.errors|striptags}} <br><br>
+                {% endfor %}
+          
+
+              
+                <input type="submit" value="Submit" class="btn btn-danger">
+                <input type="reset" value="Cancel" class="btn btn-warning">
+
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
