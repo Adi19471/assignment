@@ -49,7 +49,7 @@ class AssignmentsForm(forms.ModelForm):
             
             "name_of_title": forms.TextInput(attrs={"class": "form-control",'rows':1, 'cols': '90','id':'selected-area',}),
 
-            "date_of_call_to_people":forms.DateInput(attrs={"class": "form-control",'id':'datepicker',"readonly":"readonly"}),
+            "date_of_call_to_people":forms.DateInput(attrs={"class": "form-control","readonly":"readonly"}),
 
           
 

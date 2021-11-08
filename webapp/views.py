@@ -18,7 +18,7 @@ import calendar
 import time
 
 
-
+import datetime
 
 
 
@@ -30,11 +30,18 @@ def assignment_view(request):
 
     l = ts,int(True)
     s = '-'.join(str(n) for n in l)
-    initial_data = {'assign_id':s}
-    # name_of_title = {'name_of_title'+{}}
+
+    myDate = datetime.datetime.now()
+    formatedDate = myDate.strftime("%m/%d/%Y")
+    initial_data = {
+        'assign_id':s,
+        'date_of_call_to_people':formatedDate,
+
+    }
+   
 
     if request.method=="POST":
-        fm = AssignmentsForm(request.POST,request.FILES,initial= initial_data)
+        fm = AssignmentsForm(request.POST,request.FILES,initial= initial_data,)
         if fm.is_valid():
             fm.save()
             messages.success(request, 'Your Data Has Sucessfulluy Saved check it...')

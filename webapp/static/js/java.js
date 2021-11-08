@@ -17,3 +17,9 @@ document.getElementById('call_to_people').onclick = function() {
     }
     alert(selected);
 }
+
+// scroll down 
+
+function id_call_to_people() {
+    document.getElementById('id_call_to_people').scrollTop =  document.getElementById('id_call_to_people').scrollHeight
+   }
